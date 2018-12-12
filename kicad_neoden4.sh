@@ -22,7 +22,7 @@
 [ $# -ne 2 ] && { echo "Usage: $0 <input file> <output file>"; exit 999; }
 
 sed '1d;s/top/T/g' $1 | awk -F, ' BEGIN {OFS=","; print "Designator,Footprint,Mid X,Mid Y,Ref X,Ref Y,Pad X,Pad Y,Layer,Rotation,Comment" } 
-{print $1, $3, $4, $5, $4, $5, $4, $5, $7, ($6>180)? -1*(360-$6) : $6, $2 }' #> $outputFile
+{print $1, $3, $4, $5, $4, $5, $4, $5, $7, ($6>180)? -1*(360-$6) : $6, $2 }'
 
 
 
